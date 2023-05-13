@@ -1,8 +1,18 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(document).ready(function() { // your code that interacts with the DOM goes here
+function formatDate(dateObject){
+    return"dcode"
+}
+let thisDate = new Date();
+let thisDateFormatted = formatDate(thisDate)
 
+console.log(thisDateFormatted);
+
+
+let todayEl = $('currentday');
+$(document).ready(function() { // your code that interacts with the DOM goes here
+  todayEl.text();
 });
 
 $(function () {
