@@ -3,14 +3,14 @@
 // in the html.
 
 
-  $(document).ready(function() { // your code that interacts with the DOM goes here
-    let todayEl = $('#currentDay');
-    let d = new Date();
-    let thisDate = dayjs(d).format('dddd, MMM [The] DD[th], YYYY');
-    let thisDay = (JSON.stringify(thisDate));
-    localStorage.setItem("Todays-Date",thisDate)
+  $(document).ready(function() {// your code that interacts with the DOM goes here
+     ////////////////////// Date At The Top Code Area//////////////////////////////
+    let todayEl = $('#currentDay'); //Im setting the variable to the id that contains the text area
+    let d = new Date(); //getting a new date here which is the current one
+    let thisDate = dayjs(d).format('dddd [The] DD[th] , MMM YYYY'); //formatting the date to be text
 
-    todayEl.text(thisDate);
+    todayEl.text(thisDate);// setting the text of the text area to my formatted date
+    ////////////////////////////////////////////////////////////////////////
 
 });
 
