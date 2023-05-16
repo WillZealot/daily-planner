@@ -10,15 +10,14 @@ let localeSettings = {};
 
 $(function () {
 
-  function textEntry() {
+  function userInput() {
     $('button').on('click', function() {
       const key = $(this).parent().attr('id');
       const value = $(this).siblings('.description').val();
       localStorage.setItem(key, value);
     });
   }
-
-  textEntry();
+  userInput();
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
