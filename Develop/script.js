@@ -1,8 +1,8 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-let localeSettings = {};
-  dayjs.locale(localeSettings);
+let localeSettingsEl = {};
+  dayjs.locale(localeSettingsEl);
 
   $(document).ready(function() {// your code that interacts with the DOM goes here
 
@@ -11,21 +11,24 @@ let localeSettings = {};
 $(function () {
 
   function userInput() {
-    $('button').on('click', function() {
+    $('.saveBtn').on('click', function() {
       const key = $(this).parent().attr('id');
       const value = $(this).siblings('.description').val();
       localStorage.setItem(key, value);
     });
   }
 
+  let currentTimeEl = dayjs().format('H');
+  console.log(currentTimeEl);
 
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-
-  
+  function colourSet() {
+    $('.time-block').each(function() { //.each instead of a for loop grabbing each timeblock class
+      let theHourEl = parseInt(this.id);
+      $(this).toggleClass('future', theHourEl > currentTimeEl);
+      $(this).toggleClass('past', theHourEl < currentTimeEl);
+      $(this).toggleClass('present', theHourEl === currentTimeEl);
+    });
+  }
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
@@ -41,6 +44,7 @@ $(function () {
    }
 
    setDate();
+   colourSet();
    userInput();
    ////////////////////////////////////////////////////////////////////////
 });
