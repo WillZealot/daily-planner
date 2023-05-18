@@ -26,9 +26,9 @@ $(function () {
   function colourSet() {
     $('.time-block').each(function() { //.each instead of a for loop grabbing each timeblock class
       let hourEl = parseInt(this.id);
-      $(this).toggleClass('past', hourEl < currentTimeEl);
-      $(this).toggleClass('present', hourEl === currentTimeEl);
-      $(this).toggleClass('future', hourEl > currentTimeEl);
+      $(this).addClass('past', hourEl < currentTimeEl);
+      $(this).addClass('present', hourEl === currentTimeEl);
+      $(this).addClass('future', hourEl > currentTimeEl);
     });
   }
   // TODO: Add code to get any user input that was saved in localStorage and set
@@ -39,8 +39,6 @@ $(function () {
     let value = localStorage.getItem(key);
     $(this).children('.description').val(value);
   });
-  //
-  // TODO: Add code to display the current date in the header of the page.
    ////////////////////// Date At The Top Code Area//////////////////////////////
    function setDate(){
     let todayEl = $('#currentDay'); //Im setting the variable to the id that contains the text area
@@ -50,7 +48,7 @@ $(function () {
    todayEl.text(thisDate);
    }
    setDate();
-   colourSet();
+   
    userInput();
    ////////////////////////////////////////////////////////////////////////
 });
