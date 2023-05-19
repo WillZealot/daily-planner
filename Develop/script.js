@@ -20,15 +20,13 @@ $(function () {
 
   let currentTimeEl = dayjs().format('H');
   console.log(currentTimeEl);
-  localStorage.setItem('Time' , currentTimeEl)
-  let hourEl = localStorage.getItem('time');
 
   function colourSet() {
     $('.time-block').each(function() { //.each instead of a for loop grabbing each timeblock class
       let hourEl = parseInt(this.id);
-      $(this).addClass('past', hourEl < currentTimeEl);
-      $(this).addClass('present', hourEl === currentTimeEl);
-      $(this).addClass('future', hourEl > currentTimeEl);
+      $(this).toggleClass('past', hourEl < currentTimeEl);
+      $(this).toggleClass('present', hourEl === currentTimeEl);
+      $(this).toggleClass('future', hourEl > currentTimeEl);
     });
   }
   // TODO: Add code to get any user input that was saved in localStorage and set
@@ -47,8 +45,8 @@ $(function () {
 
    todayEl.text(thisDate);
    }
-   setDate();
-   
-   userInput();
    ////////////////////////////////////////////////////////////////////////
+  setDate();
+  colourSet();
+  userInput();
 });
