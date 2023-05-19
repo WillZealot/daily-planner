@@ -1,9 +1,11 @@
 # Daily Planner
 Keep track of your day by adding events to your hours!
 This project was made to showcase ability to implement apis such as dayjs to get hours and days formatted.
-## What was sued to make this
+## What was used to make this
 mostly java script and a handy api called dayjs since starter code was already provided.
 ## Link and Photo
+![image](https://github.com/WillZealot/daily-planner/assets/127908016/87bc368d-9dd7-4d58-a7bf-75dc3cb43229)
+
 
 
 
