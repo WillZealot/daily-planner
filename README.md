@@ -6,7 +6,7 @@ mostly java script and a handy api called dayjs since starter code was already p
 ## Link and Photo
 ![image](https://github.com/WillZealot/daily-planner/assets/127908016/87bc368d-9dd7-4d58-a7bf-75dc3cb43229)
 
-
+https://willzealot.github.io/daily-planner/
 
 
 # Table of Contents
